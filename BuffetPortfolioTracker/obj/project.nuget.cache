@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PNStPdhdcQZp1p+d9F/HYtDGYL4jV0eXt8E0NFRM9eq5zCgeMl03Nw6Vjl0fmY2v/uQeCM3Feo4fk2tVqlqnew==",
+  "dgSpecHash": "ixPu5IV41MU6aNtJ2wYmpeFP2nsoRUMm802mp9A7xoKUKg7jVATE/zN2EleZzK6YxKVtt9IMYUv0DryVnVKR3w==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker.csproj",
+  "projectFilePath": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

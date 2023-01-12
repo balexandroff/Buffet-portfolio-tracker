@@ -554,11 +554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker.csproj",
+      "projectUniqueName": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker.csproj",
       "projectName": "BuffetPortfolioTracker",
-      "projectPath": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker.csproj",
+      "projectPath": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker.csproj",
       "packagesPath": "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\obj\\",
+      "outputPath": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
