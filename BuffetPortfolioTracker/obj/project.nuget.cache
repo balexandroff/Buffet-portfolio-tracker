@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "PNStPdhdcQZp1p+d9F/HYtDGYL4jV0eXt8E0NFRM9eq5zCgeMl03Nw6Vjl0fmY2v/uQeCM3Feo4fk2tVqlqnew==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker\\BuffetPortfolioTracker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\Borislav Alexandrov\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
