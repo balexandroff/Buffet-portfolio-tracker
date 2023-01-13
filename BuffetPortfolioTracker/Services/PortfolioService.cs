@@ -9,12 +9,14 @@ namespace BuffetPortfolioTracker.Services
 {
     public class PortfolioService : IPortfolioService
     {
-        private readonly IOptions<Configuration> _configuration;
+        private readonly IEmailSender _emailSender;
+        private readonly Configuration _configuration;
         private readonly ILogger<PortfolioService> _logger;
 
-        public PortfolioService(IOptions<Configuration> configuration, ILogger<PortfolioService> logger)
+        public PortfolioService(IEmailSender emailSender, IOptions<Configuration> configuration, ILogger<PortfolioService> logger)
         {
-            _configuration = configuration;
+            _emailSender = emailSender;
+            _configuration = configuration.Value;
             _logger = logger;
         }
 
@@ -26,11 +28,24 @@ namespace BuffetPortfolioTracker.Services
 
                 var json = JsonConvert.SerializeObject(onlineData);
 
-                if (!Directory.Exists(_configuration.Value.JsonStoragePath))
-                    Directory.CreateDirectory(_configuration.Value.JsonStoragePath);
+                if (!Directory.Exists(_configuration.JsonStoragePath))
+                    Directory.CreateDirectory(_configuration.JsonStoragePath);
 
-                File.WriteAllText(Path.Combine(_configuration.Value.JsonStoragePath, _configuration.Value.FileName), json);
-                File.WriteAllText(Path.Combine(_configuration.Value.JsonStoragePath, string.Format(_configuration.Value.FileNamePerDate, DateTime.Now)), json);
+                File.WriteAllText(Path.Combine(_configuration.JsonStoragePath, _configuration.FileName), json);
+                File.WriteAllText(Path.Combine(_configuration.JsonStoragePath, string.Format(_configuration.FileNamePerDate, DateTime.Now)), json);
+
+                var difference = await this.CompareAsync(onlineData);
+
+                if (difference.Any())
+                    await _emailSender.SendEmailAsync(_configuration.MailerReceiverEmail, "Buffet Portfolio Update", $"Hi receiver," +
+                        $"<br />" +
+                        $"We are happy to inform you that there is an update in the Buffet's portfolio!" +
+                        $"<br />" +
+                        $"Here is a quick summary of what have been changed:" +
+                        $"<br /><br />" +
+                        $"{string.Join(string.Empty, difference.Select((d, i) => $"<b>{i+1}) {d.Name} - {d.Ticker} -> {d.Action}{Environment.NewLine}</b><br />").ToList())}" +
+                        $"<br />" +
+                        $"Happy investing :)");
 
                 return await Task.FromResult(onlineData);
             }
@@ -60,7 +75,7 @@ namespace BuffetPortfolioTracker.Services
         {
             List<Stock> differences = new List<Stock>();
 
-            var lastSavedRawData = File.ReadAllText(Path.Combine(_configuration.Value.JsonStoragePath, _configuration.Value.FileName));
+            var lastSavedRawData = File.ReadAllText(Path.Combine(_configuration.JsonStoragePath, _configuration.FileName));
             var lastSavedObjectData = !string.IsNullOrEmpty(lastSavedRawData) ? JsonConvert.DeserializeObject<List<Stock>>(lastSavedRawData) : new List<Stock>();
 
             foreach (var oldItem in lastSavedObjectData)
@@ -112,7 +127,7 @@ namespace BuffetPortfolioTracker.Services
 
             using (HttpClient httpClient = new HttpClient())
             {
-                var json = await httpClient.GetStringAsync(_configuration.Value.PortfolioUrl);
+                var json = await httpClient.GetStringAsync(_configuration.PortfolioUrl);
 
                 if (!string.IsNullOrEmpty(json))
                 {

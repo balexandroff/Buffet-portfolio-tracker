@@ -12,6 +12,7 @@ builder.Services.Configure<Configuration>(builder.Configuration.GetSection(Confi
 
 // Add services to the container.
 builder.Services.AddTransient<IPortfolioService, PortfolioService>();
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddTransient<IJob, SyncPortfolioJob>();
 
 builder.Services.AddControllers();
